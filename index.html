@@ -1,158 +1,225 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Microrelats (XAM)</title>
-<style>
-  .contenidor {
-    width: 300px;       /* amplada del contingut */
-    margin: 0 auto;     /* centra horitzontalment */
-  }
-  
-.accordion {
-  background-color: #ffffff;
-  cursor: pointer;
-  padding: 10px;
-  margin: 5px 0;
-  border: none;
-  text-align: center;
-  width: 320px;
-  font-size: 20px;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microrelats (XAM)</title>
 
-.content {
-  max-height: 0;
-  overflow: hidden;  transition: 0.3s;
-  background: #ffffff;
-  padding: 0 10px;
-  width: 300px;
-  font-size: 20px;
-}
-</style>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("quadret.png");
+      background-repeat: repeat;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .contenidor {
+      width: min(92vw, 680px);
+      margin: 0 auto;
+      padding: 16px 12px 32px;
+    }
+
+    .titol {
+      font-size: clamp(2rem, 6vw, 2.4rem);
+      text-align: left;
+      margin: 0 0 8px 0;
+      line-height: 1.1;
+    }
+
+    .autor {
+      font-size: clamp(1.1rem, 3.8vw, 1.5rem);
+      text-align: right;
+      margin: 0 0 20px 0;
+    }
+
+    .accordion {
+      display: block;
+      background-color: #ffffff;
+      cursor: pointer;
+      padding: 12px 14px;
+      margin: 8px 0 0 0;
+      border: none;
+      text-align: center;
+      width: 100%;
+      font-size: clamp(1.1rem, 4vw, 1.3rem);
+      line-height: 1.3;
+    }
+
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: #ffffff;
+      padding: 0 14px;
+      width: 100%;
+      font-size: clamp(1.05rem, 3.8vw, 1.25rem);
+      line-height: 1.5;
+    }
+
+    .content p {
+      margin: 14px 0;
+    }
+
+    @media (max-width: 480px) {
+      .contenidor {
+        width: 96vw;
+        padding: 12px 8px 24px;
+      }
+
+      .accordion {
+        padding: 12px 10px;
+      }
+
+      .content {
+        padding: 0 10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-<style>
-  body {
-    background-image: url("quadret.png");
-    background-repeat: repeat;
-  }
-</style>
-
   <div class="contenidor">
 
-<p style="font-size: 36px;text-align: left;margin-bottom: 5px"> <b> Microrelats<br>de primavera</b></p>
-<p style="font-size: 24px;text-align: right;  width: 310px; margin-top: 5px">Xavier Àvila i Morera  </p>
+    <p class="titol"><b>Microrelats<br>de primavera</b></p>
+    <p class="autor">Xavier Àvila i Morera</p>
 
-<button class="accordion">– 29/03/26 –</button>
-<div class="content">
-  <p><b>APLAUDIMENTS</b></p><p>Era teatre experimental.<BR>
-Després d’un monòleg d’hora i mitja, l’actor va rebre l’aplaudiment d’un públic entusiasmat.<BR>
-A la tercera salutació, es va quedar travat.<BR>
-Dos tècnics se’l van endur en llitera. Teló.<BR>
-El públic aplaudia encara més, convençut que tornaria a obrir-se.
-</p>
-</div>
+    <button class="accordion">– 29/03/26 –</button>
+    <div class="content">
+      <p><b>APLAUDIMENTS</b></p>
+      <p>
+        Era teatre experimental.<br>
+        Després d’un monòleg d’hora i mitja, l’actor va rebre l’aplaudiment d’un públic entusiasmat.<br>
+        A la tercera salutació, es va quedar travat.<br>
+        Dos tècnics se’l van endur en llitera. Teló.<br>
+        El públic aplaudia encara més, convençut que tornaria a obrir-se.
+      </p>
+    </div>
 
-<button class="accordion">– 28/03/26 –</button>
-<div class="content">
-  <p><b>LA FRASE</b></p><p>Aquell noi li agradava. Quan s’acostva a la filera de caixes, si triava la seva, se li accelerava el cor.<br> 
-Aquest matí, en tornar-li la targeta, li ha dit: «Moltes gràcies».<br>Ell li ha respost: «Tu les tens totes»<br>
-I ara no pot dormir.
-</p>
-</div>
+    <button class="accordion">– 28/03/26 –</button>
+    <div class="content">
+      <p><b>LA FRASE</b></p>
+      <p>
+        Aquell noi li agradava. Quan s’acostva a la filera de caixes, si triava la seva, se li accelerava el cor.<br>
+        Aquest matí, en tornar-li la targeta, li ha dit: «Moltes gràcies».<br>
+        Ell li ha respost: «Tu les tens totes»<br>
+        I ara no pot dormir.
+      </p>
+    </div>
 
-<button class="accordion">– 27/03/26 –</button>
-<div class="content">
-<p><b>PROBLEMA DE MEMÒRIA</b></p><p>No recordava el nom del cafè amb el que s’havia escaldat. <BR>
-  El va tenir tot el dia a la punta de la llengua.</p>
-</div>
+    <button class="accordion">– 27/03/26 –</button>
+    <div class="content">
+      <p><b>PROBLEMA DE MEMÒRIA</b></p>
+      <p>
+        No recordava el nom del cafè amb el que s’havia escaldat.<br>
+        El va tenir tot el dia a la punta de la llengua.
+      </p>
+    </div>
 
-<button class="accordion">– 26/03/26 –</button>
-<div class="content">
-  <p><b>L’ALTRA PORTA</b></p><p>—A quin pis va? <BR>—Al sisè. <BR>—Ah, jo també. <BR>En arribar, un va sortir per la porta que donava a l’escala, l’altre, per la que s’obria al mirall. </p>
-</div>
+    <button class="accordion">– 26/03/26 –</button>
+    <div class="content">
+      <p><b>L’ALTRA PORTA</b></p>
+      <p>
+        —A quin pis va? <br>
+        —Al sisè. <br>
+        —Ah, jo també. <br>
+        En arribar, un va sortir per la porta que donava a l’escala, l’altre, per la que s’obria al mirall.
+      </p>
+    </div>
 
-<button class="accordion">– 25/03/26 –</button>
-<div class="content">
-  <p><b>MASSA VOLTES</b></p><p>Estaven condemnades a treballar sempre juntes. Una era esvelta; l’altra, 
-    curta i grassoneta; la tercera, prima i inquieta. L’amo no tenia res a dir: entre totes tres feien la 
-    feina puntualment. Però un dia, arran d’un comentari dit sense malícia, van decidir aturar-se.<br>
-Empipat perquè no trobava aparcament, només va dir que havia hagut de fer més voltes que les agulles d’un rellotge. <BR>I les sagetes, en sentir-lo, van decidir que ja n’hi havia prou.
-</p>
-</div>
+    <button class="accordion">– 25/03/26 –</button>
+    <div class="content">
+      <p><b>MASSA VOLTES</b></p>
+      <p>
+        Estaven condemnades a treballar sempre juntes. Una era esvelta; l’altra,
+        curta i grassoneta; la tercera, prima i inquieta. L’amo no tenia res a dir:
+        entre totes tres feien la feina puntualment. Però un dia, arran d’un comentari dit sense malícia, van decidir aturar-se.<br>
+        Empipat perquè no trobava aparcament, només va dir que havia hagut de fer més voltes que les agulles d’un rellotge.<br>
+        I les sagetes, en sentir-lo, van decidir que ja n’hi havia prou.
+      </p>
+    </div>
 
-<button class="accordion">– 24/03/26 –</button>
-<div class="content">
-  <p><b>POCA FE</b></p><p>No creia en fantasmes i quan l’ànima del seu difunt marit, suau com una brisa, movia la cortina del menjador, ella sempre s’hi acostava per tancar la finestra.</p>
-</div>
+    <button class="accordion">– 24/03/26 –</button>
+    <div class="content">
+      <p><b>POCA FE</b></p>
+      <p>
+        No creia en fantasmes i quan l’ànima del seu difunt marit, suau com una brisa, movia la cortina del menjador, ella sempre s’hi acostava per tancar la finestra.
+      </p>
+    </div>
 
+    <button class="accordion">– 23/03/26 –</button>
+    <div class="content">
+      <p><b>TROBADA INESPERADA</b></p>
+      <p>
+        En creuar-se no la va saludar perquè no sabia si la coneixia o s’assemblava a algú altre.<br>
+        Uns metres més enllà es va girar i va veure que ella també s’havia aturat i se’l mirava.<br>
+        Es van acostar i es van preguntar: ens coneixem? <br>
+        Van concloure que no tenien el gust… fins aleshores.<br>
+        I se’n van anar junts a fer un cafè.
+      </p>
+    </div>
 
-<button class="accordion">– 23/03/26 –</button>
-<div class="content">
-  <p><b>TROBADA INESPERADA</b></p><p>En creuar-se no la va saludar perquè no sabia si la coneixia o s’assemblava a algú altre. 
-    Uns metres més enllà es va girar i va veure que ella també s’havia aturat i se’l mirava. <br>
-    Es van acostar i es van preguntar: ens coneixem? <br>Van concloure que no tenien el gust… fins aleshores.<br> 
-    I se’n van anar junts a fer un cafè.
-</p>
-</div>
+    <button class="accordion">– 22/03/26 –</button>
+    <div class="content">
+      <p><b>EL COSTUM</b></p>
+      <p>
+        Abans d’anar a dormir sempre ha de mirar sota el llit.<br>
+        Si no, no pot agafar el son.<br>
+        Un dia se’n va oblidar.<br>
+        I es va adormir.<br>
+        Des d'aleshores, no ha deixat de fer-ho, per si de cas.
+      </p>
+    </div>
 
-<button class="accordion">– 22/03/26 –</button>
-<div class="content">
-  <p><b>EL COSTUM</b></p><p>Abans d’anar a dormir sempre ha de mirar sota el llit.<br>
-Si no, no pot agafar el son.<br>
-Un dia se’n va oblidar.<br>
-I es va adormir.<br>
-Des d'aleshores, no ha deixat de fer-ho, per si de cas.
-</p>
-</div>
+    <button class="accordion">– 21/03/26 –</button>
+    <div class="content">
+      <p><b>CURIOSITAT</b></p>
+      <p>
+        Hi ha gent que, per fer una feina que requereix molta atenció, treu la punta de la llengua entre els llavis.<br>
+        Algunes no es poden estar de sortir a mirar.
+      </p>
+    </div>
 
-<button class="accordion">– 21/03/26 –</button>
-<div class="content">
-<p><b>CURIOSITAT</b></p><p>
-Hi ha gent que, per fer una feina que requereix molta atenció, treu la punta de la llengua entre els llavis.<br>
-Algunes no es poden estar de sortir a mirar.
-</p>
-</div>
+    <button class="accordion">– 20/03/26 –</button>
+    <div class="content">
+      <p><b>VERTIGEN</b></p>
+      <p>
+        Una idea és com una llavor: no saps d’on ve, però si arrela, pot créixer –pensava, intentant escriure un microrelat.<br>
+        Des del balcó, vaig comptar set pisos fins al carrer.<br>
+        Sort que no totes les llavors floreixen.
+      </p>
+    </div>
 
-<button class="accordion">– 20/03/26 –</button>
-<div class="content">
-  <p><b>VERTIGEN</b></p><p>Una idea és com una llavor: no saps d’on ve, però si arrela, pot créixer –pensava, intentant escriure un microrelat.<br>
-Des del balcó, vaig comptar set pisos fins al carrer.<br>Sort que no totes les llavors floreixen. 
-</p>
-</div>
-<script>
-const acc = document.querySelectorAll(".accordion");
+  </div>
 
-acc.forEach(btn => {
-  btn.addEventListener("click", () => {
+  <script>
+    const acc = document.querySelectorAll(".accordion");
 
-    // Tancar tots els altres
-    acc.forEach(otherBtn => {
-      if (otherBtn !== btn) {
-        otherBtn.nextElementSibling.style.maxHeight = null;
-      }
+    acc.forEach(btn => {
+      btn.addEventListener("click", () => {
+        acc.forEach(otherBtn => {
+          if (otherBtn !== btn) {
+            otherBtn.nextElementSibling.style.maxHeight = null;
+          }
+        });
+
+        const content = btn.nextElementSibling;
+        content.style.maxHeight = content.style.maxHeight
+          ? null
+          : content.scrollHeight + "px";
+      });
     });
 
-    // Obrir/tancar el clicat
-    const content = btn.nextElementSibling;
-    content.style.maxHeight = content.style.maxHeight
-      ? null
-      : content.scrollHeight + "px";
-  });
-});
-
-// Obrir el primer en carregar
-window.addEventListener("load", () => {
-  if (acc.length > 0) {
-    const firstContent = acc[0].nextElementSibling;
-    firstContent.style.maxHeight = firstContent.scrollHeight + "px";
-  }
-});
-</script>
-
-</div>
+    window.addEventListener("load", () => {
+      if (acc.length > 0) {
+        const firstContent = acc[0].nextElementSibling;
+        firstContent.style.maxHeight = firstContent.scrollHeight + "px";
+      }
+    });
+  </script>
 </body>
 </html>
